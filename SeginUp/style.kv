@@ -1,0 +1,31 @@
+#:import utils kivy.utils
+
+Screen:
+    name: 'AnonNet_app'
+    
+    FloatLayout:
+        orientation: 'vertical'
+        
+        MDLabel:
+            font_name: '../assets/nasa.ttf'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+            text: '[color=#000000]AnonNet[/color]'
+            font_size: 80
+            bold: True
+            markup: True
+            halign: 'center'
+            valign: 'middle'
+            
+        
+        MDTextField:
+            id: name
+            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+            hint_text: 'Name'
+            color_mode: 'custom'
+            size_hint_x: 0.8
+        
+        MDFillRoundFlatButton:
+            id: start_write
+            text: 'Write'
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            on_release: app.name(name)
